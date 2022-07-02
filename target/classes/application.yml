@@ -1,0 +1,23 @@
+server:
+  address: localhost
+  port: 9998
+spring:
+  datasource:
+    username: root
+    password: 123456789
+    url: jdbc:mysql://127.0.0.1:3306/user_passport?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+dubbo:
+  application:
+    name: test-service-provider
+  registry:
+    #注册中心地址
+    #指定超时时间,单位毫秒
+    timeout: 5000
+    address: zookeeper://127.0.0.1:2181
+  consumer:
+    timeout: 2500
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+
